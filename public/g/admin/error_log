@@ -1,0 +1,12 @@
+[16-Jun-2023 03:16:04 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/swiflhsk/public_html/admin/db.php on line 10
+[07-Jul-2023 22:08:48 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'swiflhsk_swift'@'localhost' (using password: YES) in /home/crunbero/Universalinvtpro.com/admin/db.php on line 10
+[07-Jul-2023 22:09:09 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'swiflhsk_swift'@'localhost' (using password: YES) in /home/crunbero/Universalinvtpro.com/admin/db.php on line 10
+[07-Jul-2023 22:09:09 America/New_York] PHP Warning:  mysqli_real_escape_string(): Couldn't fetch mysqli in /home/crunbero/Universalinvtpro.com/admin/process_login.php on line 10
+[07-Jul-2023 22:09:09 America/New_York] PHP Warning:  mysqli_real_escape_string(): Couldn't fetch mysqli in /home/crunbero/Universalinvtpro.com/admin/process_login.php on line 11
+[07-Jul-2023 22:09:09 America/New_York] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/crunbero/Universalinvtpro.com/admin/process_login.php on line 15
+[07-Jul-2023 22:09:09 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/crunbero/Universalinvtpro.com/admin/process_login.php on line 16
+[07-Jul-2023 22:09:24 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'swiflhsk_swift'@'localhost' (using password: YES) in /home/crunbero/Universalinvtpro.com/admin/db.php on line 10
+[07-Jul-2023 22:09:24 America/New_York] PHP Warning:  mysqli_real_escape_string(): Couldn't fetch mysqli in /home/crunbero/Universalinvtpro.com/admin/process_login.php on line 10
+[07-Jul-2023 22:09:24 America/New_York] PHP Warning:  mysqli_real_escape_string(): Couldn't fetch mysqli in /home/crunbero/Universalinvtpro.com/admin/process_login.php on line 11
+[07-Jul-2023 22:09:24 America/New_York] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/crunbero/Universalinvtpro.com/admin/process_login.php on line 15
+[07-Jul-2023 22:09:24 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/crunbero/Universalinvtpro.com/admin/process_login.php on line 16

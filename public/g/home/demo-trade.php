@@ -1,0 +1,967 @@
+<?php include "../database/secure.php"; ?>
+<html lang="en">
+<head>
+	<link rel="shortcut icon" type="image/jpg" href="assets/images/fav.png"/>
+<!-- Required meta tags -->    
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,shrink-to-fit=no, user-scalable=0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Elitetrdmarkets is a registered trading company. With  Elitetrdmarkets, you can discover a better trading experience using our awesome trading platform which is available on desktop, web and mobile.">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Elitetrdmarkets">
+<meta itemprop="description" content="Elitetrdmarkets is a registered trading company. With  Elitetrdmarkets, you can discover a better trading experience using our awesome trading platform which is available on desktop, web and mobile.">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Elitetrdmarkets">
+<meta name="twitter:description" content="Elitetrdmarkets is a registered trading company. With  Elitetrdmarkets, you can discover a better trading experience using our awesome trading platform which is available on desktop, web and mobile. ">
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:description" content="Elitetrdmarkets is a registered trading company. With  Elitetrdmarkets, you can discover a better trading experience using our awesome trading platform which is available on desktop, web and mobile. ">
+<meta name="og:title" content="Elitetrdmarkets">
+<meta name="og:site_name" content="Elitetrdmarkets">
+<meta name="og:locale" content="en_US">
+<meta name="og:type" content="website">
+<!-- Image to display -->
+<meta property="og:image" content="assets/images/logo.png">
+<meta property="og:image:type" content="image/jpeg">
+<!-- Size of image. Any size up to 300. Anything above 300px will not work in WhatsApp -->
+<meta property="og:image:width" content="300">
+<meta property="og:image:height" content="300">
+<!-- Website to visit when clicked in fb or WhatsApp-->
+<meta property="og:url" content="">
+<!-- MS Tile - for Microsoft apps-->
+<meta name="msapplication-TileImage" content="assets/images/logo.png">    
+<!-- fb & Whatsapp -->
+<!-- Site Name, Title, and Description to be displayed -->
+<meta property="og:site_name" content="Elitetrdmarkets">
+<meta property="og:title" content="Create wealth by discovering the potentials of earning in an enhanced cryptocurrency system.">
+<meta property="og:description" content="Elitetrdmarkets is a registered trading company. With  Elitetrdmarkets, you can discover a better trading experience using our awesome trading platform which is available on desktop, web and mobile. ">
+<!-- end import -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/icons.css">
+	<link rel="stylesheet" href="assets/css/ui.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="js/Toast-Loading-Indicator-Plugin/jquery.toast.js"></script>
+	
+
+	<title>Demo Trading Dashboard - Elitetrdmarkets</title>
+	<style type="text/css">		                                        
+		#blinkupgrade{ display:block;
+		    position:relative;
+		    width:auto;
+		    color: white;
+		    background:black;
+		    text-transform: uppercase;
+		    font-weight: bold;
+		    clear:both;
+		    padding: 2em
+		}
+
+
+		.blinkupgrade-active{
+		    background-color:green !important;
+		    display:block;
+		    text-transform: uppercase;
+		    position:relative;
+		    width:auto;
+		    color: black !important;
+		    clear:both;
+		    font-weight: bold;
+		}
+
+		.blinkupgrade-inactive{
+		    background-color:red !important;
+		    display:block;
+		    text-transform: uppercase;
+		    position:relative;
+		    width:auto;
+		    color: black !important;
+		    clear:both;
+		    font-weight: bold;
+		}
+
+	</style>
+</head>
+    <header>
+       <div class="container-full-width">
+
+	<div class="crypt-header">
+		<div class="row">
+			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-5">
+				<div class="row">
+					<div class="col-xs-2">
+
+						<div class="crypt-logo">
+                            <a href="dashboard.php">
+							<img width="60%" src="logo.png" alt="logo-image">
+                            </a>
+						</div>
+					</div>
+					<div class="col-xs-2">
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-8 col-lg-8 col-md-8 d-none d-md-block d-lg-block">
+				<ul class="crypt-heading-menu fright" style="margin-right: 63px">
+
+					   
+       <li><a href="dashboard.php">Account</a></li>
+        <li><a href="transaction_history.php">Transaction History</a></li>
+        <li><a href="Withdraw.php">Withdraw</a></li>
+        <li><a href="deposit.php">Deposit</a></li>
+         <li><a href="buy-plan.php">Invest</a></li>
+        <li><a href="buy-crypto.php">Buy Crypto</a></li>
+        <li><a href="trade_history.php">Trade History</a></li>
+        <li><a href="demo-trade.php">Demo Trading</a></li>
+        <li><a href="profile.php">Profile</a></li>
+        <li class="crypt-box-menu menu-red"><a href="logout.php">Logout</a></li>
+
+				</ul>
+			</div>
+			<i class="menu-toggle pe-7s-menu d-xs-block d-sm-block d-md-none d-sm-none" style="z-index: 999999;"></i>
+            <style>
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:visited {
+        color: black;
+    }
+
+    .box::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #F5F5F5;
+        border-radius: 5px
+    }
+
+    .box::-webkit-scrollbar {
+        width: 10px;
+        background-color: #F5F5F5;
+        border-radius: 5px
+    }
+
+    .box::-webkit-scrollbar-thumb {
+        background-color: black;
+        border: 2px solid black;
+        border-radius: 5px
+    }
+
+    .icons {
+        display: inline;
+        float: right
+    }
+
+    .notification {
+        padding-top: 25px;
+        padding-right: 17px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .number {
+        height: 20px;
+        width: 20px;
+        background-color: #d63031;
+        border-radius: 20px;
+        color: white;
+        text-align: center;
+        position: absolute;
+        top: 15px;
+        left: 25px;
+        padding: 1px;
+        border-style: solid;
+        border-width: 2px;
+        font-size: smaller;
+    }
+
+    .number:empty {
+        display: none;
+    }
+
+    .notBtn {
+        transition: 0.5s;
+        cursor: pointer;
+        height: 50px;
+    }
+
+    .fas {
+        font-size: 25pt;
+        /*padding-bottom: 10px;*/
+        color: black;
+        margin-right: 40px;
+        margin-left: 40px;
+    }
+
+    .box {
+        /*width: 400px;*/
+        width: 378px;
+        height: 0px;
+        border-radius: 10px;
+        transition: 0.5s;
+        position: absolute;
+        overflow-y: scroll;
+        padding: 0px;
+        left: -270px;
+        /*left: -300px;*/
+        margin-top: 5px;
+        background-color: #F4F4F4;
+        -webkit-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.1);
+        cursor: context-menu;
+    }
+
+    .fas:hover {
+        color: #d63031;
+    }
+
+    .notBtn:hover > .box {
+        /*height: 60vh*/
+        height: max-content;
+    }
+
+
+    .display {
+        position: relative;
+    }
+
+    .cont {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #F4F4F4;
+    }
+
+    .cont:empty {
+        display: none;
+    }
+
+    .stick {
+        text-align: center;
+        display: block;
+        font-size: 50pt;
+        padding-top: 70px;
+        padding-left: 80px
+    }
+
+    .stick:hover {
+        color: black;
+    }
+
+    .cent {
+        text-align: center;
+        display: block;
+    }
+
+    .sec {
+        padding: 25px 10px;
+        background-color: #F4F4F4;
+        transition: 0.5s;
+    }
+
+    .profCont {
+        padding-left: 15px;
+    }
+
+    .profCont > img {
+        max-width: 15%;
+    }
+
+    .profile {
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        width: 75px;
+        float: left;
+    }
+
+    .txt {
+        vertical-align: top;
+        font-size: 1rem;
+        padding: 5px 10px 0px 80px;
+        color: black;
+    }
+
+    .sub {
+        font-size: 1rem;
+        color: grey;
+    }
+
+    .new {
+        border-style: none none solid none;
+        border-color: red;
+    }
+
+    .sec:hover {
+        background-color: #BFBFBF;
+    }
+
+    .bell-notification {
+        position: absolute;
+        right: -2px;
+        z-index: 100;
+    }
+</style>
+
+
+<div class="crypt-mobile-menu">
+	<ul class="crypt-heading-menu">
+		             
+       <li><a href="dashboard.php">Account</a></li>
+        <li><a href="transaction_history.php">Transaction History</a></li>
+        <li><a href="Withdraw.php">Withdraw</a></li>
+        <li><a href="deposit.php">Deposit</a></li>
+         <li><a href="buy-plan.php">Invest</a></li>
+        <li><a href="buy-crypto.php">Buy Crypto</a></li>
+        <li><a href="trade_history.php">Trade History</a></li>
+        <li><a href="demo-trade.php">Demo Trading</a></li>
+        <li><a href="profile.php">Profile</a></li>
+        <li class="crypt-box-menu menu-red"><a href="logout.php">Logout</a></li>
+	</ul>
+	
+</div>    </header>
+
+<body class="crypt-dark">
+	<!-- taper -->
+
+	<!-- header -->
+    @include('dashboard.header')
+
+    <div class="container-fluid">
+        <div class="row sm-gutters">
+        	<!-- buy / sell section -->
+            <div class="col-xl-4">
+
+            	<!-- tader details -->
+            	<div class="crypt-gross-market-cap">
+                    <div class="row container">
+                    	<div class="col-12" style="padding-right: 0">
+                    		<h4 class="text-lg">
+                    		 <strong>Welcome Back, </strong>  <?php  echo FNAME;?>
+	                    	</h4>
+                    	</div>
+
+                    	<div class="col-12 row" 
+                    	style="margin-top: 1em; padding-right: 0; padding-left: 10px">
+                    		
+                    		<div class="col-auto">
+	                    		<h4 class="text-md">
+	                    			Balance <br>
+	                    			&#36; 
+	                    			<span id="demoBal">
+										500.00 
+									</span>
+									<input type="hidden" id="txt_demoBal" value="500">
+	                    			
+		                    	</h4>
+	                    	</div>
+
+                    		<div class="col-auto">
+	                    		<h4 class="text-md">
+	                    			Profit <br>
+	                    			&#36; 
+	                    			<span id="demoBonus">
+										0.00	
+									</span> 
+									<input type="hidden" id="txt_demoBonus" value="0">
+	                    			
+		                    	</h4>
+	                    	</div>
+	                    	
+	                    	
+
+	                    	<div class="col-4" style="display: none;">
+	                    		<h4 class="text-lg">
+	                    			BTC  <br>
+	                    			<div id="diw" class="text-primary" ></div>
+		                    	</h4>
+	                    	</div>
+
+	                    	<!-- <script>
+								setInterval(function(){
+								$("#diw").load("cryptorefresh.php");
+								},1000);
+							</script> -->
+                    	</div>
+                    </div>
+                </div>
+                <!-- end trader details -->
+
+                <script>
+					setInterval(function(){
+					  $("#blinkupgrade").toggleClass(
+					  	"blinkupgrade-active "
+					  	);
+					  },1000);
+				</script>
+
+				<div id="blinkupgrade" class="text-center">
+					<h5>	
+													<i class="fa fa-signal"></i> Demo Trading Active
+											</h5>
+				</div>
+
+
+
+                <!-- end blinker -->
+
+            	<!-- buy and sell -->
+                <div class="crypt-boxed-area">
+                    <h6 class="crypt-bg-head"><b class="crypt-up">BUY</b> / <b class="crypt-down">SELL</b></h6>
+                    <span id="result"></span>
+                    <div class="row no-gutters">
+                        <div class="col-md-6">
+                            <div class="crypt-buy-sell-form">
+                                <p>Buy <span class="crypt-up">BTC</span> <span class="fright">Available: <b class="crypt-up">20 BTC</b></span></p>
+                                <div class="crypt-buy">
+                                	<div class="input-group mb-3">
+                                        <div class="input-group-prepend"> 
+                                        	<span class="input-group-text">Currency</span> 
+                                        </div>
+                
+									    <select id="curr" class="form-control">
+									    	<option value="Crypto Currency">Crypto</option>
+									    </select>
+                                    </div>
+                                     
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> 
+                                        	<span class="input-group-text">Asset</span> 
+                                        </div>
+                                        <select name="ast1" id="ast1" class="form-control" required="true">
+									     	<option value="">Select Asset</option>
+											<option>ALGO-BTC</option>
+											<option>ALGO-USD</option>
+											<option>BCH-BTC</option>
+											<option>BCH-USD</option>
+											<option>BCH-EUR</option>
+											<option>BTC-EUR</option>
+											<option>BTC-GBP</option>
+											<option>BTC-TRY</option>
+											<option>BTC-USD</option>
+											<option>BTC-USDT</option>
+											<option>DGLD-BTC</option>
+											<option>DGLD-USD</option>
+											<option>ETH-BTC</option>
+											<option>ETH-EUR</option>
+											<option>ETH-GBP</option>
+											<option>ETH-TRY</option>
+											<option>ETH-USD</option>
+											<option>ETH-USDT</option>
+											<option>LTC-EUR</option>
+											<option>LTC-USD</option>
+											<option>PAX-USD</option>
+											<option>USDT-EUR</option>
+											<option>USDT-TRY</option>
+											<option>USDT-USD</option>
+											<option>XLM-USD</option>
+											<option>XLM-EUR</option>
+											<option>XRP-EUR</option>
+									    </select>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> 
+                                        	<span class="input-group-text">Trade In</span> 
+                                        </div>
+                                        <select name="trd1" id="trd1" class="form-control" required="true">
+									     	<option value="10000">10 Seconds</option>
+											<option value="30000">30 Seconds</option>
+											<option value="60000">1 Minute</option>
+											<option value="120000">2 Minutes</option>
+									    </select>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> 
+                                        	<span class="input-group-text">Amount</span> 
+                                        </div>
+                                        <input type="number" min="0" id="amtBuy" class="form-control"  value="0" name="amtBuy" >
+                                    </div>
+
+                                    <div>
+                                        <p>Fee: <span class="fright">100%x0.2=0.02</span></p>
+                                    </div>
+                                    <div class="text-center mt-3 mb-3 crypt-up">
+                                        <p>Your payout will 9% on profit trades</p>
+                                        <!-- <h4>0.09834 BTC</h4> -->
+                                    </div>
+                                    <div class="menu-green">
+                                    	<input type="hidden" id="userId" value="351">
+                                    	<button style="cursor: pointer;" data-user="351" class="sub crypt-button-green-full">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="crypt-buy-sell-form">
+                                <p>Sell <span class="crypt-down">BTC</span> <span class="fright">Available: <b class="crypt-down">20 BTC</b></span></p>
+                                <div class="crypt-sell">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> 
+                                        	<span class="input-group-text">Currency</span> 
+                                        </div>
+                                        <select name="curr2" id="curr2" class="form-control" required="true">
+									     	<option value="Crypto Currency">Crypto Currency</option>
+									    </select>
+                                    </div>
+                                     
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> 
+                                        	<span class="input-group-text">Asset</span> 
+                                        </div>
+                                        <select name="ast2" id="ast2" class="form-control" required="true">
+									     	<option value="">Select Asset</option>
+											<option>ALGO-BTC</option>
+											<option>ALGO-USD</option>
+											<option>BCH-BTC</option>
+											<option>BCH-USD</option>
+											<option>BCH-EUR</option>
+											<option>BTC-EUR</option>
+											<option>BTC-GBP</option>
+											<option>BTC-TRY</option>
+											<option>BTC-USD</option>
+											<option>BTC-USDT</option>
+											<option>DGLD-BTC</option>
+											<option>DGLD-USD</option>
+											<option>ETH-BTC</option>
+											<option>ETH-EUR</option>
+											<option>ETH-GBP</option>
+											<option>ETH-TRY</option>
+											<option>ETH-USD</option>
+											<option>ETH-USDT</option>
+											<option>LTC-EUR</option>
+											<option>LTC-USD</option>
+											<option>PAX-USD</option>
+											<option>USDT-EUR</option>
+											<option>USDT-TRY</option>
+											<option>USDT-USD</option>
+											<option>XLM-USD</option>
+											<option>XLM-EUR</option>
+											<option>XRP-EUR</option>
+									    </select>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> 
+                                        	<span class="input-group-text">Trade In</span> 
+                                        </div>
+                                        <select name="trd2" id="trd2" class="form-control" required="true">
+									     	<option value="10000">10 Seconds</option>
+											<option value="30000">30 Seconds</option>
+											<option value="60000">1 Minute</option>
+											<option value="120000">2 Minutes</option>
+									    </select>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> 
+                                        	<span class="input-group-text">Amount</span> 
+                                        </div>
+                                        <input type="number" value="0" min="0" id="amtSell" class="form-control" placeholder="" >
+                                    </div>
+
+                                    <div>
+                                        <p>Fee: <span class="fright">100%x0.2=0.02</span></p>
+                                    </div>
+                                    <div class="text-center mt-3 mb-3 crypt-up">
+                                        <p>You will approximately pay % on trades</p>
+                                        <!-- <h4>0.09834 BTC</h4> -->
+                                    </div>
+                                    <div>
+                                    	<button  style="cursor: pointer;" data-user="351" class="sub2 crypt-button-red-full">Sell</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end buy and sell -->
+
+                 <!-- TradingView Widget BEGIN -->
+				<div class="tradingview-widget-container">
+					<div class="tradingview-widget-container__widget"></div>
+					<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+						{
+						"colorTheme": "dark",
+						"dateRange": "12m",
+						"showChart": false,
+						"locale": "en",
+						"largeChartUrl": "",
+						"isTransparent": false,
+						"width": "100%",
+						"height": "400",
+						"tabs": [
+						  {
+						    "title": "Indices",
+						    "symbols": [
+						      {
+						        "s": "FOREXCOM:SPXUSD",
+						        "d": "S&P 500"
+						      },
+						      {
+						        "s": "FOREXCOM:NSXUSD",
+						        "d": "Nasdaq 100"
+						      },
+						      {
+						        "s": "FOREXCOM:DJI",
+						        "d": "Dow 30"
+						      },
+						      {
+						        "s": "INDEX:NKY",
+						        "d": "Nikkei 225"
+						      },
+						      {
+						        "s": "INDEX:DEU30",
+						        "d": "DAX Index"
+						      },
+						      {
+						        "s": "FOREXCOM:UKXGBP",
+						        "d": "FTSE 100"
+						      }
+						    ],
+						    "originalTitle": "Indices"
+						  },
+						  {
+						    "title": "Commodities",
+						    "symbols": [
+						      {
+						        "s": "CME_MINI:ES1!",
+						        "d": "E-Mini S&P"
+						      },
+						      {
+						        "s": "CME:6E1!",
+						        "d": "Euro"
+						      },
+						      {
+						        "s": "COMEX:GC1!",
+						        "d": "Gold"
+						      },
+						      {
+						        "s": "NYMEX:CL1!",
+						        "d": "Crude Oil"
+						      },
+						      {
+						        "s": "NYMEX:NG1!",
+						        "d": "Natural Gas"
+						      },
+						      {
+						        "s": "CBOT:ZC1!",
+						        "d": "Corn"
+						      }
+						    ],
+						    "originalTitle": "Commodities"
+						  },
+						  {
+						    "title": "Forex",
+						    "symbols": [
+						      {
+						        "s": "FX:EURUSD"
+						      },
+						      {
+						        "s": "FX:GBPUSD"
+						      },
+						      {
+						        "s": "FX:USDJPY"
+						      },
+						      {
+						        "s": "FX:USDCHF"
+						      },
+						      {
+						        "s": "FX:AUDUSD"
+						      },
+						      {
+						        "s": "FX:USDCAD"
+						      }
+						    ],
+						    "originalTitle": "Forex"
+						  }
+						]
+						}
+					</script>
+				</div>
+				<!-- TradingView Widget END -->
+
+				<!-- Converter; -->
+				<div>
+					<script>
+						var fm = "USD";var to = "EUR";var tz = "timezone";var sz = "1x1";var lg = "en";var st = "info";var lr = "0";var rd = "0";
+					</script>
+					<a href="https://currencyrate.today/converter-widget" title="Currency Converter">
+						<script src="//currencyrate.today/converter"></script>
+					</a>
+				</div>
+				<!-- converter end -->
+            </div>
+            <!-- end buy / sell -->
+            <div class="col-xl-8">
+                <div>
+                    <div class="crypt-market-status mt-3">
+                       <!-- trading signal -->
+
+                       <div class="tradingview-widget-container">
+							<div id="tradingview_b71c6"></div>
+							<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+							<script type="text/javascript">
+								new TradingView.widget(
+								{
+								"width": "100%",
+								"height": "855",
+								"symbol": "NASDAQ:AAPL",
+								"timezone": "exchange",
+								"theme": "dark",
+								"style": "3",
+								"locale": "en",
+								"toolbar_bg": "#f1f3f6",
+								"enable_publishing": true,
+								"withdateranges": true,
+								"range": "5d",
+								"allow_symbol_change": true,
+								"details": true,
+								"hotlist": true,
+								"calendar": true,
+								"news": [
+								  "stocktwits",
+								  "headlines"
+								],
+								"studies": [
+								  "CMF@tv-basicstudies",
+								  "IchimokuCloud@tv-basicstudies",
+								  "MACD@tv-basicstudies",
+								  "MF@tv-basicstudies",
+								  "MASimple@tv-basicstudies",
+								  "PivotPointsHighLow@tv-basicstudies",
+								  "ROC@tv-basicstudies"
+								],
+								"container_id": "tradingview_b71c6"
+								}
+								);
+							</script>
+						</div>
+
+                       <!-- end trading signal -->
+                    </div>
+
+                    <div class="tradingview-widget-container mb-3">
+	                    <div id="crypt-candle-chart"></div>
+	                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+  
+	<link rel="stylesheet" type="text/css" href="js/cute-alert-master/style.css">
+	<script type="text/javascript" src="js/cute-alert-master/cute-alert.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$(".sub").click(function() {
+
+				//buy
+				var amt=  parseInt( $("#amtBuy").val() );
+				var user = $('#userId').val();
+				
+				var bonus = parseInt( $('#txt_demoBonus').val() );
+				var bal = parseInt( $('#txt_demoBal').val() );
+
+				var e = document.getElementById("curr");
+				var cur1 = e.value;
+
+				var ast1=$("#ast1").val();
+				var trd1=$("#trd1").val();
+
+				
+				if ($("#amtBuy").val() == '') {
+					cuteAlert({
+						type: "error",
+						title: "Enter A Valid Amount",
+						message: "You cannot place trade. <br> Enter a valid amount to trade <br> Contact Support for Help.",
+						buttonText: "Okay"
+					});
+					return;
+				}
+
+				if (bal <= amt) {
+					cuteAlert({
+						type: "error",
+						title: "Demo Balance Is To Low",
+						message: "You cannot place trade. <br> Your demo trading balance is low <br> Contact Support for Help.",
+						buttonText: "Okay"
+					});
+					return;
+				}
+
+				placeTrade('Buy', bal, bonus, user, amt, cur1, ast1, trd1);
+			});
+
+
+			$(".sub2").click(function() {
+				// sell
+				var amt=  parseInt( $("#amtSell").val() );
+				// var user = $(this).data('user');
+				var user = $('#userId').val();
+				var bonus = parseInt( $('#demoBonus').html() );
+				var bal = parseInt( $('#demoBal').html() );
+
+				var cur2=$("#curr2").val();
+				var ast2=$("#ast2").val();
+				var trd2=$("#trd2").val();
+
+
+				if ($("#amtSell").val() == '') {
+					cuteAlert({
+						type: "error",
+						title: "Enter A Valid Amount",
+						message: "You cannot place trade. <br> Enter a valid amount to trade <br> Contact Support for Help.",
+						buttonText: "Okay"
+					});
+					return;
+				}
+
+				if (bal <= amt) {
+					cuteAlert({
+						type: "error",
+						title: "Balance Is To Low",
+						message: "You cannot trade <br> Your balance is too low <br> Contact Support for Help.",
+						buttonText: "Okay"
+					});
+					return;
+				}
+				placeTrade('Sell', bal, bonus, user, amt, cur2, ast2, trd2);
+			});
+
+
+			function placeTrade(tradeType, bal, bonus, user, tradeAmt, curr, ast2, trd1){
+			
+				var amt= parseFloat( tradeAmt, 10).toFixed(2);
+				if ( amt < 1 ) {
+					cuteAlert({
+						type: "error",
+						title: "Amount invalid",
+						message: "Your trading amount is invalid. <br> Please enter a valid trading amount",
+						buttonText: "Okay"
+					});
+					return;
+				}else if(!ast2){
+					cuteAlert({
+						type: "error",
+						title: "Select Asset",
+						message: "Please select the asset before trading.",
+						buttonText: "Okay"
+					});
+					return;
+				}
+
+				cuteAlert({
+				  type: "question",
+				  title: `<strong> Are you sure you want to place trade? </strong>`,
+				  message: `
+				  	Asset Type: ${ast2}.<br>
+				  	Order Place @ ${tradeType} Position. <br> 
+				  	Amount: $${amt}. <br>
+				  	`,
+				  confirmText: "Yes!",
+				  cancelText: "No, Go Back"
+				}).then((e)=>{
+					if ( e == ("confirm")){
+
+					  	var sec_2 = parseInt(trd1) + 2000;
+					  	var sec_4 = parseInt(trd1) + 4000;
+					  	var sec_6 = parseInt(trd1) + 6000;
+					  	var sec_8 = parseInt(trd1) + 8000;
+					  	var sec_10 = parseInt(trd1) + 12000;
+
+					  	$.Toast.showToast({
+							"title":"<h3>CONNECTING TO TRADING SERVER.. <br> <br> PLEASE WAIT </h3>",
+							"duration": trd1
+						});
+					  
+					  	
+					  	setTimeout(function(){
+					  		cuteToast({
+							  type: "error", // or 'info', 'error', 'warning'
+							  message: `Trade Placed. <br> Opened ${tradeType}: $${amt}`,
+							  timer: 4000
+							});
+					  	}, sec_2);
+
+
+						setTimeout(function() {
+							cuteToast({
+							  type: "success", // or 'info', 'error', 'warning'
+							  message: `Trade Executed Successfully. <br> Opened ${tradeType}: $${amt}`,
+							  timer: 6000
+							})
+						}, sec_4);
+
+						setTimeout(function() {
+							cuteAlert({
+							  type: "success",
+							  title: `<strong>Trade Executed! </strong>`,
+							  message: `
+							  	Asset Type: ${ast2}.<br>
+							  	Order Place @ ${tradeType} Position. <br> 
+							  	Amount: $${amt}. <br>
+							  	<br>Check your demo trading history result. 
+							  	`,
+							});
+							setTimeout(function(){
+								$('.alert-close').click();
+							}, 5000);
+						}, sec_8);
+						updateBalance({amount: amt, asset: ast2, currency: curr, time: trd1, user: user, position: tradeType});
+					} 
+				})
+			}
+
+
+			function updateBalance({amount, asset,currency,time, user, position}){
+				$.ajax({
+			    url:'trade.php',
+			    data:{
+			    	amount, 
+					asset,
+					currency,
+					time,
+					user,
+					position
+			    },
+			    type:'POST',
+			    success: function(data) {
+			    	var trd1=time;
+			    	var ts = parseInt(trd1) + 6000;
+			    	
+			    	setTimeout(function() {
+				    	if (data.status == true || data.status == 'true') {
+			    		 	$("#result").html(data);
+					      	$('#demoBal').html(parseInt(data.balance).toFixed(2));
+					      	$('#txt_demoBal').val(data.balance);
+					      	$('#demoBonus').html(parseInt(data.bonus).toFixed(2));
+					      	$('#txt_demoBonus').val(data.bonus);
+				    	}
+			    	}, ts);
+			    },
+			    error: function(jqXHR, textStatus, errorThrown) {
+		           console.log(textStatus, errorThrown);
+		        }
+			  });
+			}
+
+		});
+
+	</script>
+
+	
+
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <!-- <script src="../account/assets/js/bundle.js"></script> -->	 
+
+</body>
+</html>

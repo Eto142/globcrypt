@@ -1,0 +1,19 @@
+/* Compiled CSS from third-party libraries or frameworks */
+/* Example: Bootstrap CSS */
+
+/*!
+ * Bootstrap v4.6.0 (https://getbootstrap.com)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2021 The Bootstrap Authors and Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+/* Reset and dependencies */
+@import url("bootstrap-reboot.min.css");
+@import url("bootstrap-grid.min.css");
+@import url("bootstrap-utilities.min.css");
+
+/* Core CSS */
+@import url("bootstrap.min.css");
+
+/* Add more third-party CSS imports below */
