@@ -12,84 +12,101 @@
     <style>
         :root {
             --primary-color: #4361ee;
-            --secondary-color: #3a0ca3;
-            --success-color: #4cc9f0;
-            --dark-color: #0f172a;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --dark-color: #1a1a2e;
             --light-color: #f8f9fa;
-            --card-bg: #1e293b;
+            --card-bg: #16213e;
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
-            --border-radius: 12px;
-            --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            --transition: all 0.3s ease;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --transition: all 0.2s ease;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0b1120;
+            background-color: var(--dark-color);
             color: var(--text-primary);
             line-height: 1.6;
+            padding: 0;
+            margin: 0;
         }
 
-        .funding-container {
+        .container {
             max-width: 800px;
             margin: 2rem auto;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
 
-        .funding-header {
+        .header {
             text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
+            margin-bottom: 2.5rem;
         }
 
-        .funding-title {
-            font-size: 2.5rem;
+        .title {
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #4361ee, #4cc9f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            display: inline-block;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
         }
 
-        .funding-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #4361ee, #4cc9f0);
-            border-radius: 2px;
-        }
-
-        .funding-subtitle {
+        .subtitle {
             color: var(--text-secondary);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .funding-card {
+        .card {
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
             padding: 2rem;
             box-shadow: var(--box-shadow);
             margin-bottom: 2rem;
-            border: none;
-            transition: var(--transition);
         }
 
-        .funding-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        .form-group {
+            margin-bottom: 1.75rem;
         }
 
-        .payment-options {
-            margin: 2rem 0;
+        .form-label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .input-group {
+            display: flex;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .input-group-text {
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            font-weight: 500;
+            border-right: none;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            font-size: 1rem;
+            border-left: none;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
         }
 
         .payment-methods {
@@ -114,12 +131,11 @@
             align-items: center;
             justify-content: center;
             padding: 1.5rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: var(--border-radius);
-            border: 2px solid transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             cursor: pointer;
             transition: var(--transition);
-            height: 100%;
         }
 
         .payment-method input[type="radio"]:checked + label {
@@ -128,77 +144,45 @@
         }
 
         .payment-method label:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .payment-icon {
-            font-size: 2rem;
+            font-size: 1.75rem;
             margin-bottom: 0.75rem;
         }
 
         .btc-icon { color: #f7931a; }
         .eth-icon { color: #627eea; }
         .usdt-icon { color: #26a17b; }
-        .bank-icon { color: #60a5fa; }
+        .bank-icon { color: #4895ef; }
 
         .payment-name {
             font-weight: 600;
             font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius);
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border: none;
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
             color: white;
-            padding: 0.75rem 2rem;
+            padding: 0.85rem 2rem;
             font-size: 1rem;
             font-weight: 600;
-            border-radius: 50px;
+            border-radius: var(--border-radius);
+            border: none;
             cursor: pointer;
             transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            width: 100%;
+            text-align: center;
         }
 
-        .btn-primary:hover {
+        .btn:hover {
+            background: var(--secondary-color);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
         }
 
-        .btn-primary i {
+        .btn i {
             margin-right: 0.5rem;
         }
 
@@ -206,20 +190,21 @@
             padding: 1rem;
             border-radius: var(--border-radius);
             margin-bottom: 1.5rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            border: 1px solid transparent;
         }
 
         .alert-success {
-            background: rgba(16, 185, 129, 0.2);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: #4ade80;
+            background: rgba(76, 201, 240, 0.1);
+            border-color: rgba(76, 201, 240, 0.2);
+            color: var(--accent-color);
         }
 
         .quick-links {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .quick-link {
@@ -227,38 +212,43 @@
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
+            font-size: 0.95rem;
         }
 
         .quick-link:hover {
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         .quick-link i {
             margin-right: 0.5rem;
         }
 
-        /* Responsive adjustments */
+        .footer-text {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
         @media (max-width: 768px) {
-            .funding-title {
-                font-size: 2rem;
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .title {
+                font-size: 1.8rem;
             }
             
             .payment-methods {
                 grid-template-columns: 1fr 1fr;
             }
             
-            .funding-card {
+            .card {
                 padding: 1.5rem;
             }
         }
 
-        @media (max-width: 576px) {
-            .funding-title {
-                font-size: 1.75rem;
-            }
-            
+        @media (max-width: 480px) {
             .payment-methods {
                 grid-template-columns: 1fr;
             }
@@ -272,22 +262,18 @@
     </style>
 </head>
 <body>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="funding-container">
+    <div class="container">
         <!-- Header Section -->
-        <div class="funding-header">
-            <h1 class="funding-title">Fund Your Account</h1>
-            <p class="funding-subtitle">Deposit funds using any of our secure payment methods to start trading immediately</p>
+        <div class="header">
+            <h1 class="title">Fund Your Account</h1>
+            <p class="subtitle">Choose your preferred payment method to deposit funds</p>
             
             <div class="quick-links">
                 <a href="{{url('crypto_buy')}}" class="quick-link">
-                    <i class="fas fa-coins"></i> Buy Crypto
+                    <i class="fas fa-exchange-alt"></i> Buy Crypto
                 </a>
                 <a href="#" class="quick-link">
-                    <i class="fas fa-question-circle"></i> Deposit Help
+                    <i class="fas fa-question-circle"></i> Help Center
                 </a>
             </div>
         </div>
@@ -295,33 +281,33 @@
         <!-- Success Messages -->
         @if (session('status'))
         <div class="alert alert-success" role="alert">
-            <i class="fas fa-check-circle me-2"></i> {{ session('status') }}
+            <i class="fas fa-check-circle"></i> {{ session('status') }}
         </div>
         @endif
         
         @if($message = Session::get('success'))
         <div class="alert alert-success">
-            <i class="fas fa-check-circle me-2"></i> {{$message}}
+            <i class="fas fa-check-circle"></i> {{$message}}
         </div>
         @endif
 
         <!-- Funding Card -->
-        <div class="funding-card">
-            <form accept-charset="utf-8" method="post" action="{{url('get-deposit')}}">
+        <div class="card">
+            <form method="post" action="{{url('get-deposit')}}">
                 {{csrf_field()}}
                 
                 <!-- Amount Input -->
                 <div class="form-group">
-                    <label for="amount" class="form-label">DEPOSIT AMOUNT ({{Auth::user()->currency}})</label>
+                    <label for="amount" class="form-label">Amount to Deposit ({{Auth::user()->currency}})</label>
                     <div class="input-group">
-                        <span class="input-group-text" style="background: rgba(255, 255, 255, 0.05); color: var(--text-primary); border-right: none;">{{Auth::user()->currency}}</span>
-                        <input type="number" name="amount" id="amount" placeholder="Enter amount" class="form-control" style="border-left: none;" required>
+                        <span class="input-group-text">{{Auth::user()->currency}}</span>
+                        <input type="number" name="amount" id="amount" class="form-control" placeholder="Enter amount" required>
                     </div>
                 </div>
 
                 <!-- Payment Methods -->
-                <div class="payment-options">
-                    <label class="form-label">SELECT PAYMENT METHOD</label>
+                <div class="form-group">
+                    <label class="form-label">Payment Method</label>
                     <div class="payment-methods">
                         <!-- Bitcoin -->
                         <div class="payment-method">
@@ -362,60 +348,55 @@
                 </div>
 
                 <!-- Submit Button -->
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-arrow-right"></i> Proceed to Payment
-                    </button>
-                </div>
+                <button type="submit" class="btn">
+                    <i class="fas fa-arrow-right"></i> Continue
+                </button>
             </form>
         </div>
 
-        <!-- Additional Information -->
-        <div style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 2rem;">
-            <p><i class="fas fa-lock me-2"></i> All transactions are secured with 256-bit SSL encryption</p>
-            <p>Need help? <a href="#" style="color: var(--primary-color);">Contact our support team</a></p>
+        <!-- Footer Text -->
+        <div class="footer-text">
+            <p><i class="fas fa-lock"></i> All transactions are securely encrypted</p>
         </div>
     </div>
 
-    <!-- Script for copy functions -->
     <script type="text/javascript">
         function copyAddress(id, currency) {
             var copyText = document.getElementById(id);
             copyText.select();
             document.execCommand("copy");
             
-            // Show nice notification instead of alert
+            // Notification
             const notification = document.createElement('div');
             notification.style.position = 'fixed';
             notification.style.bottom = '20px';
             notification.style.right = '20px';
-            notification.style.backgroundColor = '#1e293b';
+            notification.style.backgroundColor = 'var(--card-bg)';
             notification.style.color = 'white';
-            notification.style.padding = '15px 25px';
-            notification.style.borderRadius = '8px';
-            notification.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            notification.style.padding = '12px 20px';
+            notification.style.borderRadius = 'var(--border-radius)';
+            notification.style.boxShadow = 'var(--box-shadow)';
             notification.style.zIndex = '1000';
             notification.style.display = 'flex';
             notification.style.alignItems = 'center';
+            notification.style.border = '1px solid var(--primary-color)';
             notification.innerHTML = `
-                <i class="fas fa-check-circle" style="color: #4ade80; margin-right: 10px; font-size: 1.2rem;"></i>
-                ${currency} address copied to clipboard!
+                <i class="fas fa-check-circle" style="color: var(--accent-color); margin-right: 10px;"></i>
+                ${currency} address copied
             `;
             
             document.body.appendChild(notification);
             
-            // Remove notification after 3 seconds
             setTimeout(() => {
                 notification.style.opacity = '0';
-                notification.style.transition = 'opacity 0.5s ease';
+                notification.style.transition = 'opacity 0.3s ease';
                 setTimeout(() => {
                     document.body.removeChild(notification);
-                }, 500);
+                }, 300);
             }, 3000);
         }
     </script>
 </body>
 </html>
-
 
 @include('dashboard.footer')

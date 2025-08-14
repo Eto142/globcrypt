@@ -23,7 +23,7 @@
                             <li><a href="{{url('deposit')}}" class="btn btn-primary"><span>Deposit</span> <em
                                         class="icon ni ni-arrow-long-right"></em></a></li>
                                         
-                                         <li><a href="#" class="btn btn-white btn-light" data-bs-toggle="modal" data-bs-target="#pass"><span>Withdraw</span> <em class="icon ni ni-arrow-long-right d-none d-sm-inline-block"></em></a></li>
+                                         <li><a href="{{ route('withdrawal') }}" class="btn btn-white btn-light" ><span>Withdraw</span> <em class="icon ni ni-arrow-long-right d-none d-sm-inline-block"></em></a></li>
                         </ul>
                     </div><!-- .nk-block-head-content -->
                 </div><!-- .nk-block-between -->
@@ -163,7 +163,7 @@
 
     <div class="dashboard-container">
         <!-- Notification Marquee -->
-        <div class="notification-bar">
+        {{-- <div class="notification-bar">
             <div class="marquee-container">
                 <div class="marquee-content">
                     <span class="notification-badge">NOTICE</span>
@@ -171,7 +171,7 @@
                 </div>
             </div>
         </div>
-    
+     --}}
         <!-- Dashboard Cards -->
         <div class="dashboard-grid">
             <!-- Card 1: Trading Balance -->

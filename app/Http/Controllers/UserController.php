@@ -1772,15 +1772,15 @@ $responseBTC = $client->get('https://api.coingecko.com/api/v3/simple/price?ids=b
 $dataBTC = json_decode($responseBTC->getBody(), true);
 $priceBTC = $dataBTC['bitcoin']['usd'];
 
-    // Fetch Ethereum (ETH) price in USD
-    $responseETH = $client->get('https://api.coingecko.com/api/v3/simple/price', [
-        'query' => [
-            'ids' => 'ethereum',
-            'vs_currencies' => 'usd',
-        ],
-    ]);
-    $dataETH = json_decode($responseETH->getBody(), true);
-    $priceETH = $dataETH['ethereum']['usd'];
+    // // Fetch Ethereum (ETH) price in USD
+    // $responseETH = $client->get('https://api.coingecko.com/api/v3/simple/price', [
+    //     'query' => [
+    //         'ids' => 'ethereum',
+    //         'vs_currencies' => 'usd',
+    //     ],
+    // ]);
+    // $dataETH = json_decode($responseETH->getBody(), true);
+    // $priceETH = $dataETH['ethereum']['usd'];
     $method = $request->input('item');
     $data['method'] = $method;
     $data['deposit'] = Deposit::where('user_id', Auth::user()->id)->where('status', '1')->sum('amount');
