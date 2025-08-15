@@ -40,12 +40,12 @@
 
 
 
-          <li>
+          {{-- <li>
             <a href="{{url('add-traders')}}">
               <i class="bi bi-calendar4"></i>
               <span class="menu-text">Add Copy Traders</span>
             </a>
-          </li>
+          </li> --}}
 
           <li>
             <a href="{{route('user.transactions')}}">

@@ -78,9 +78,9 @@
                             Update Notification
                         </button>
                         
-                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModalCenter9">
+                        {{-- <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModalCenter9">
                             Update Escrow Amount
-                        </button>
+                        </button> --}}
                         
                         <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModalCenter11">
                             Update Trade Fee
