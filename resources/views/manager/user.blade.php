@@ -38,6 +38,10 @@
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Trade Fee: </span>{{$userProfile->currency}}{{$userProfile->update_trade_fee}}
                         </li>
+
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>  Withdrawal Charge: </span>{{$userProfile->currency}}{{$userProfile->withdrawal_charge}}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -74,8 +78,12 @@
                             Update Signal Strength
                         </button>
                         
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter6">
+                        {{-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter6">
                             Update Notification
+                        </button> --}}
+
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter7">
+                            Update Withdrawal Charge
                         </button>
                         
                         {{-- <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModalCenter9">
@@ -227,6 +235,32 @@
             </div>
         </div>
     </div>
+
+
+
+     <!-- Update withdrawal charge Modal -->
+    <div class="modal fade" id="exampleModalCenter7" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Update {{$userProfile->name}} Withdrawal Charge</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+               <form action="{{ route('withdrawal.charge',$userProfile->id)}}" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <label class="form-label">Amount</label>
+                        <input type="text" name="withdrawal_charge" class="form-control" value="{{$userProfile->withdrawal_charge}}"  style="color:blue" placeholder="E.g 100 " />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Update Withdrawal Charge</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Update Notification Modal -->
     <div class="modal fade" id="exampleModalCenter6" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -533,7 +567,7 @@
             </div>
         </div> --}}
 
-        <!-- Investment History -->
+        {{-- <!-- Investment History -->
         <div class="col-sm-12 col-12">
             <div class="card">
                 <div class="card-header">
@@ -570,7 +604,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Earning History -->
         <div class="col-sm-12 col-12">

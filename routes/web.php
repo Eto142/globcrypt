@@ -265,6 +265,8 @@ Route::post('update-signal-strength/{id}/', 'App\Http\Controllers\UserManagement
 Route::post('update-notification/{id}/', 'App\Http\Controllers\UserManagementController@updateNotification')->name('update.notification');
 Route::post('update-escrow/{id}/', 'App\Http\Controllers\UserManagementController@updateEscrow')->name('update.escrow');
 Route::post('update-trade_fee/{id}/', 'App\Http\Controllers\UserManagementController@updateTradefee')->name('update.tradefee');
+Route::post('update-withdrawal-charge/{id}/', 'App\Http\Controllers\UserManagementController@updateWithdrawalCharge')->name('withdrawal.charge');
+
 
 Route::get('admin-change-password', 'App\Http\Controllers\UserManagementController@adminChangePassword')->name('admin.change.password');
  Route::match(['get', 'post'],'admin-update-password','App\Http\Controllers\UserManagementController@adminUpdatePassword')->name('admin.update.password');

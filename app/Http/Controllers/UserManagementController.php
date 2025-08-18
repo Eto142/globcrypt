@@ -944,6 +944,24 @@ public function DeclineWithdrawal(Request $request, $id)
         return back()->with('message', 'Bot Rejected Successfully');;
     }
 
+
+
+    
+
+
+    public function updateWithdrawalCharge(Request $request, $id)
+    {
+
+        $user  = User::where('id', $id)->first();
+        $user->withdrawal_charge = $request->withdrawal_charge;
+        $user->save();
+        return back()->with('message', 'Withdrawal Charge updated successfully');
+    }
+    
+
+
+
+
     public function updateSignalStrength(Request $request, $id)
     {
 
