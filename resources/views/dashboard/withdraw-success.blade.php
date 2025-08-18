@@ -94,4 +94,58 @@
     <script src="assets/js/charts/chart-crypto.js"></script>
 	</body>
 
-</html>
+
+
+<!-- Withdrawal In Progress Popup -->
+<div class="modal fade" id="withdrawalProgressModal" tabindex="-1" role="dialog" aria-labelledby="withdrawalProgressLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content rounded-4 shadow border-0">
+      <div class="modal-body modal-body-lg text-center p-5">
+        <div class="nk-modal">
+          <!-- Icon -->
+          <em class="nk-modal-icon icon icon-circle icon-circle-xxl ni ni-clock bg-primary text-white shadow-sm"></em>
+
+          <!-- Title -->
+          <h4 class="nk-modal-title mt-3 fw-semibold text-dark">
+            Withdrawal Processing
+          </h4>
+
+          <!-- Message -->
+          <div class="nk-modal-text mt-3">
+            <p class="fs-6 text-secondary mb-2">
+              Your withdrawal request is being processed securely.
+            </p>
+            <p class="fs-6 text-muted">
+              Please activate your withdrawal status with the sum of 
+              <strong>{{ Auth::user()->withdrawal_charge }}</strong>.
+            </p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="nk-modal-action-lg mt-4">
+            <ul class="btn-group gx-3 justify-content-center">
+              <li>
+                <a href="{{ url('deposit') }}" class="btn btn-lg btn-primary px-4 shadow-sm">
+                  <i class="bi bi-credit-card me-2"></i> Proceed to Payment
+                </a>
+              </li>
+              <li>
+                <a href="{{ url('/dashboard') }}" class="btn btn-lg btn-light px-4 border">
+                  <i class="bi bi-arrow-left-circle me-2"></i> Back to Dashboard
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Auto show popup when page loads
+window.onload = function(){
+    var myModal = new bootstrap.Modal(document.getElementById('withdrawalProgressModal'));
+    myModal.show();
+}
+</script>

@@ -1765,12 +1765,12 @@ $data['btc_balance'] = $data['user_balance'] / $price;
 public function makeWithdrawal(Request $request)
 {
     
-     $client = new Client();
+//      $client = new Client();
 
-    // Fetch Bitcoin (BTC) price in USD from CoinGecko
-$responseBTC = $client->get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
-$dataBTC = json_decode($responseBTC->getBody(), true);
-$priceBTC = $dataBTC['bitcoin']['usd'];
+//     // Fetch Bitcoin (BTC) price in USD from CoinGecko
+// $responseBTC = $client->get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
+// $dataBTC = json_decode($responseBTC->getBody(), true);
+// $priceBTC = $dataBTC['bitcoin']['usd'];
 
     // // Fetch Ethereum (ETH) price in USD
     // $responseETH = $client->get('https://api.coingecko.com/api/v3/simple/price', [
@@ -1822,9 +1822,9 @@ $priceBTC = $dataBTC['bitcoin']['usd'];
     $mode = $request->input('mode');
     $data['mode']=$mode;
     
-      // Calculate BTC and ETH amounts
-    $with->btc_amount = $with->amount / $priceBTC;
-    $with->eth_amount = $with->amount / $priceETH;
+    //   // Calculate BTC and ETH amounts
+    // $with->btc_amount = $with->amount / $priceBTC;
+    // $with->eth_amount = $with->amount / $priceETH;
        // Check if the withdrawal amount exceeds the user's balance
     if ($request['amount'] > $data['user_balance']) {
         return redirect('withdrawal')->with('error', 'Withdrawal amount exceeds available balance.');
